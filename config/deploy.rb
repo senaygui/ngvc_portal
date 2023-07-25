@@ -2,10 +2,14 @@
 # config valid for current version and patch releases of Capistrano
 lock "~> 3.16.0"
 
-set :application, "portal_system"
+set :application, "leadstarone"
 set :repo_url, "https://github.com/senaygui/ngvc_portal.git"
 # set :ssh_options, { :forward_agent => true, :port => 4321 }
-set :user, "deploy"
+set :git_http_username, 'senaygui' 
+ask(:github_token, "github_token", echo: false)
+set :git_http_password, fetch((:github_token))
+
+set :user, "testdeploy"
 set :passenger_restart_with_touch, true
 # set :rbenv_path, '/home/deploy/.rbenv/'
 set :stages, %w(production staging)

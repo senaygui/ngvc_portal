@@ -88,6 +88,6 @@ test:
 #
 production:
   <<: *default
-  database: portal_system_production
-  username: portal_system
-  password: <%= ENV['PORTAL_SYSTEM_DATABASE_PASSWORD'] %>
+  database: testdeploy
+  username: deploy
+  password: Leadstar_1234
